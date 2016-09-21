@@ -6,7 +6,7 @@ export default class Tab extends PureComponent {
 
     props: {
         imgSrc: string,
-        index: number,
+        img: any,
         selected: boolean,
         showIcon: boolean,
         showText: boolean,
@@ -23,7 +23,7 @@ export default class Tab extends PureComponent {
     };
 
     render() {
-        const { imgSrc, selected, showIcon, showText, text, onClose, closable } = this.props;
+        const { imgSrc, img, selected, showIcon, showText, text, onClose, closable } = this.props;
 
         return (
             <div
@@ -33,6 +33,7 @@ export default class Tab extends PureComponent {
                 onClick={this.props.onClick}
             >
                 {showIcon && imgSrc && <img src={imgSrc} role="presentation" />}
+                {showIcon && img}
                 {showText && text && <M m={text} />}
                 {closable && <CloseButton onClick={onClose} />}
             </div>

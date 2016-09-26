@@ -5,12 +5,8 @@ import NumberColored from './NumberColored';
 export default class Number extends PureComponent {
 
     props: {
-        className?: string,
-		currency?: string,
-		digits: number,
-		style?: 'decimal' | 'currency' | 'percent',
-		value: number,
         isProfit: boolean,
+        value: number,
     };
 
     defaultProps: {

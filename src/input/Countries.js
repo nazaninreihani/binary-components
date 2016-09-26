@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 
 type Residence = {
-	value: string,
-	text: string,
 	disabled: boolean,
+	text: string,
+	value: string,
 }
 
 export default class Countries extends PureComponent {

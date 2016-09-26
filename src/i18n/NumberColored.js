@@ -9,7 +9,6 @@ export default class NumberColored extends PureComponent {
 		className?: string,
 		currency?: string,
 		digits: number,
-		style: 'decimal' | 'currency' | 'percent',
 		value: number,
 	};
 

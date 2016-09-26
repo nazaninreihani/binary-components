@@ -11,6 +11,7 @@ export default class Tab extends PureComponent {
         showIcon: boolean,
         showText: boolean,
         text: string,
+        tooltip: string,
         closable: bool,
         onClick: (e: SyntheticEvent) => void,
         onClose: (e: SyntheticEvent) => void,
@@ -23,7 +24,7 @@ export default class Tab extends PureComponent {
     };
 
     render() {
-        const { imgSrc, img, selected, showIcon, showText, text, onClose, closable } = this.props;
+        const { imgSrc, img, selected, showIcon, showText, text, tooltip, onClose, closable } = this.props;
 
         return (
             <div
@@ -36,6 +37,7 @@ export default class Tab extends PureComponent {
                 {showIcon && img}
                 {showText && text && <M m={text} />}
                 {closable && <CloseButton onClick={onClose} />}
+                {tooltip && <div className="tooltip">{tooltip}</div>}
             </div>
         );
     }

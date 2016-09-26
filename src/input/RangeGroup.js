@@ -7,12 +7,6 @@ export default class RangeGroup extends PureComponent {
 		items: number[],
 		id: string,
 		label: string,
-		defaultValue: number,
-		min: number,
-		max: number,
-		step: number,
-		readOnly: bool,
-		onChange: (e: SyntheticEvent) => void,
 	};
 
 	static defaultProps = {

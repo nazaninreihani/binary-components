@@ -3,8 +3,8 @@ import RadioItem from './RadioItem';
 
 type Options = {
 	img: string,
-	value: string,
 	text: string,
+	value: string,
 }
 
 export default class RadioGroup extends PureComponent {
@@ -12,8 +12,6 @@ export default class RadioGroup extends PureComponent {
 	props: {
 		className: string,
 		name: string,
-		text: string,
-		img: string,
 		options: Options[],
 		onChange: (e: SyntheticEvent) => void,
 		value: any,

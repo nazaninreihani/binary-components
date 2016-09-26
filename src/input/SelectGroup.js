@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import Label from '../i18n/Label';
 
 type Option = {
-	value: string,
 	text: string,
+	value: string,
 }
 
 export default class SelectGroup extends PureComponent {

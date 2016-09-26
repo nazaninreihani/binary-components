@@ -2,26 +2,13 @@ import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import Label from '../i18n/Label';
 
-type Value = number | Date | string;
-
 export default class InputGroup extends PureComponent {
 
 	props: {
-		type: string,
 		id: string,
 		className: string,
 		label: string,
-		list: string,
-		defaultValue: Value,
-		value: Value,
-		min: Value,
-		max: Value,
-		step: number,
-		readOnly: boolean,
 		placeholder: string,
-		onChange: (e: SyntheticEvent) => void,
-		autoComplete: string,
-		maxLength: string,
 	};
 
 	render() {

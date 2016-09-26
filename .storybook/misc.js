@@ -17,7 +17,7 @@ storiesOf('Misc', module)
         <IntlProvider locale="en">
             <TabList onChange={e => window.console.log(e)} activeIndex={1}>
                 <Tab text="First Tab" />
-                <Tab text="Second Tab" />
+                <Tab text="Second Tab" tooltip="Tooltip" />
             </TabList>
         </IntlProvider>
     );

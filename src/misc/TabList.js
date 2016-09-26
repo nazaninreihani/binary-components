@@ -8,7 +8,6 @@ type Props = {
     vertical: bool,
     showText: bool,
     showIcons: bool,
-    style: Object,
     onChange: (index: number) => void,
 };
 

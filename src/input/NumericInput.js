@@ -61,7 +61,8 @@ export default class NumericInput extends PureComponent {
 
     onStepDown = () => {
         const smallerStepDown = (this.state.value).toString()[0] === '1';
-        this.addDiffWithChecks(smallerStepDown ? -this.step() / 10 : -this.step());
+        const step = smallerStepDown ? -this.step() / 10 : -this.step();
+        this.addDiffWithChecks(step);
     }
 
     // this function should not check and change input value automatically!!
@@ -72,7 +73,7 @@ export default class NumericInput extends PureComponent {
 
         const value = (newValue && integer) ? Math.floor(newValue) : newValue;
 
-        this.setState({ value: value ? value.toString() : undefined });
+        this.setState({ value: typeof value !== 'undefined' ? value.toString() : undefined });
         const { onChange } = this.props;
         if (onChange) onChange(+value);
     }

@@ -7,7 +7,7 @@ storiesOf('Inputs', module)
     .add('NumericInput', () =>
         <NumericInput min={0} max={500} defaultValue={10} />
     )
-    .add('NumericInput (no decimals)', () =>
+    .add('NumericInput (integer)', () =>
         <NumericInput min={0} max={500} integer />
     )
     .add('DateOfBirth', () =>

@@ -1,19 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
-import sinon from 'sinon';
 import TabList from '../TabList';
 import Tab from '../Tab';
 
 describe('<TabList />', () => {
     it('should render', () => {
         const wrapper = shallow(<TabList />);
-        expect(wrapper).to.be.ok;
+        expect(wrapper).toBeDefined();
     });
 
     it('should render a single item if contained', () => {
         const wrapper = shallow(<TabList>Hello</TabList>);
-        expect(wrapper.nodes).to.have.length(1);
+        expect(wrapper.nodes.length).toEqual(1);
     });
 
     it('should render as many children as contained', () => {
@@ -24,7 +22,7 @@ describe('<TabList />', () => {
                 <span />
             </TabList>
         );
-        expect(wrapper.find('span')).to.have.length(3);
+        expect(wrapper.find('span').length).toEqual(3);
     });
 
     it('should set at least one child to selected', () => {
@@ -33,17 +31,17 @@ describe('<TabList />', () => {
                 <span />
             </TabList>
         );
-        expect(wrapper.find('span[selected]')).to.have.length(1);
+        expect(wrapper.find('span[selected]').length).toEqual(1);
     });
 
-    it('wuut', () => {
-        const onTabClick = sinon.spy();
+    it('a click on its contents will call onTabClick', () => {
+        const onTabClick = jest.fn();
         const wrapper = shallow(
             <TabList onChange={onTabClick}>
                 <Tab />
             </TabList>
         );
         wrapper.find('Tab').simulate('click');
-        expect(onTabClick).to.have.property('callCount', 1);
+        expect(onTabClick).toHaveBeenCalled();
     });
 });

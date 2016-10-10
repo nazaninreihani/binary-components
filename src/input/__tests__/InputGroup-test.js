@@ -1,5 +1,4 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import InputGroup from '../InputGroup';
@@ -7,7 +6,7 @@ import InputGroup from '../InputGroup';
 describe('<InputGroup />', () => {
     it('renders with no properties', () => {
         const wrapper = shallow(<InputGroup />);
-        expect(wrapper.type()).to.equal('fieldset');
+        expect(wrapper.type()).toEqual('fieldset');
     });
 
     it('renders label if provided', () => {
@@ -16,7 +15,7 @@ describe('<InputGroup />', () => {
                 <InputGroup label="someLabel" />
             </IntlProvider>
         );
-        expect(wrapper.text()).to.include('someLabel');
+        expect(wrapper.text()).toContain('someLabel');
     });
 
     it('translates placeholder if provided', () => {
@@ -25,6 +24,6 @@ describe('<InputGroup />', () => {
                 <InputGroup placeholder="somePlaceholder" />
             </IntlProvider>
         );
-        expect(wrapper.find('input').prop('placeholder')).to.equal('somePlaceholder');
+        expect(wrapper.find('input').prop('placeholder')).toEqual('somePlaceholder');
     });
 });

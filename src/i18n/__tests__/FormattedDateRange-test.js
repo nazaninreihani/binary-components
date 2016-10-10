@@ -1,5 +1,4 @@
 import React from 'react';
-import { expect } from 'chai';
 import { render } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import FormattedDateRange from '../FormattedDateRange';
@@ -14,7 +13,7 @@ describe('<FormattedDateRange />', () => {
                 />
             </IntlProvider>
         );
-        expect(wrapper.text()).to.contain('1/1/2000');
-        expect(wrapper.text()).to.contain('10/10/2010');
+        expect(wrapper.text()).toContain('1/1/2000');
+        expect(wrapper.text()).toContain('10/10/2010');
     });
 });

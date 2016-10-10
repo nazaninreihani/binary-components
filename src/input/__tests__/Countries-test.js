@@ -1,12 +1,11 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Countries from '../Countries';
 
 describe('<Countries />', () => {
     it('renders with no properties', () => {
         const wrapper = shallow(<Countries />);
-        expect(wrapper.type()).to.equal('select');
+        expect(wrapper.type()).toEqual('select');
     });
 
     it('renders options', () => {
@@ -16,6 +15,6 @@ describe('<Countries />', () => {
             { value: 'country3' },
         ];
         const wrapper = shallow(<Countries residenceList={residenceList} />);
-        expect(wrapper.find('option')).to.have.length(3 + 1);
+        expect(wrapper.find('option').length).toEqual(3 + 1);
     });
 });

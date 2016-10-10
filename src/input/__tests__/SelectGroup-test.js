@@ -1,5 +1,4 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 import SelectGroup from '../SelectGroup';
@@ -7,12 +6,12 @@ import SelectGroup from '../SelectGroup';
 describe('<SelectGroup />', () => {
     it('renders with no properties', () => {
         const wrapper = shallow(<SelectGroup />);
-        expect(wrapper.type()).to.equal('fieldset');
+        expect(wrapper.type()).toEqual('fieldset');
     });
 
     it('passes className to fieldset', () => {
         const wrapper = shallow(<SelectGroup className="test-class" />);
-        expect(wrapper.props().className).to.equal('test-class');
+        expect(wrapper.props().className).toEqual('test-class');
     });
 
     it('passes id to select', () => {
@@ -21,7 +20,7 @@ describe('<SelectGroup />', () => {
                 <SelectGroup id="test-id" />
             </IntlProvider>
         );
-        expect(wrapper.find('#test-id')).to.have.length(1);
+        expect(wrapper.find('#test-id').length).toEqual(1);
     });
 
     it('can render options', () => {
@@ -31,6 +30,6 @@ describe('<SelectGroup />', () => {
                 <SelectGroup options={options} />
             </IntlProvider>
         );
-        expect(wrapper.find('option')).to.have.length(2);
+        expect(wrapper.find('option').length).toEqual(2);
     });
 });

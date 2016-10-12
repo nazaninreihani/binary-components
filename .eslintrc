@@ -39,6 +39,7 @@
     "import/namespace": 0,
     "import/prefer-default-export": 0,
     "import/no-extraneous-imports": 0,
+    "import/no-extraneous-dependencies": [error, { devDependencies: true }],
     "jsx-a11y/no-static-element-interactions": 0,
     "flowtype/define-flow-type": 1,
     "flowtype/require-parameter-type": 1,

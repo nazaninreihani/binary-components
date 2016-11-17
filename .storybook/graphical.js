@@ -30,7 +30,4 @@ storiesOf('Graphical', module)
     )
     .add('LogoSpinner', () =>
         <LogoSpinner />
-    )
-    .add('Star', () =>
-        <Star />
     );

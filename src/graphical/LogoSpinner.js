@@ -14,7 +14,8 @@ export default class LogoSpinner extends PureComponent {
 			<img
 				alt="Loading"
 				className={classNames.join(' ')}
-				src="img/binary-symbol-logo.svg"
+				src="https://style.binary.com/
++                images/logo/logomark.svg"
 			/>
 		);
 	}
